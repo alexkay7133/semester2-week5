@@ -17,7 +17,13 @@ int main(void){
 	int squares[10];    // max possible size
 	int count = 0;   // actual number of results
 	
-	//todo: convert the list comprehension
+	//convert the list comprehension
+	for (int j=0; j<10; j++) {
+		if (numbers[j] % 2 == 0) {
+			squares[count] = numbers[j]*numbers[j];
+			count++;
+		}
+	}
 	
 	//print results
 	for(int i=0; i < count; i++){

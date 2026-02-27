@@ -9,6 +9,14 @@ int main(void){
  * until a 0 (zero) is entered. Print the sum at the end.
  */
 
+    int sum = 0;
+    int input;
+    do {
+        scanf("%i", &input);
+        sum += input;
+    } while (input);
+    printf("Sum = %i", sum);
+
 
     return 0;
 }
