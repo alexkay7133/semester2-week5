@@ -19,15 +19,14 @@ int main(void){
 	
 	printf("Enter a hexadecimal:");
 	fgets(hex, sizeof(hex), stdin);
-
-	for (int i = 0; i < 9; i++) {
-		if (hex[i] == '\0') {
+	for (int i = 0; i < 10; i++) {
+		if (hex[i] == '\0' || hex[i] == '\n') {
 			break;
 		}
 			hex[i] = toupper(hex[i]);
 			length++;
 	}
-	length -= 2;
+	length--;
 	for (; length >= 0; length--) {
 		switch (hex[length]) {
 			case '0': case '1': case '2': case '3': case '4': 
