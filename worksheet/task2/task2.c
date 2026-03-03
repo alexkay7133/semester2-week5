@@ -13,7 +13,7 @@
 
 int main(void){
 	long decimal=0;
-	int count = 1;
+	long count = 1;
 	int length = 0;
 	char hex[9];
 	
