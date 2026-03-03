@@ -8,6 +8,8 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
 int main(void){
 	long decimal=0;
@@ -17,21 +19,24 @@ int main(void){
 	
 	printf("Enter a hexadecimal:");
 	fgets(hex, sizeof(hex), stdin);
-	hex = toupper(hex);
 
 	for (int i = 0; i < 9; i++) {
 		if (hex[i] == '\0') {
 			break;
 		}
-		else {
-			length++
-		}
+			hex[i] = toupper(hex[i]);
+			length++;
 	}
+	length -= 2;
 	for (; length >= 0; length--) {
+		printf("length = %d\n", length);
+		printf("char = %c\n", hex[length]);
 		switch (hex[length]) {
 			case '0': case '1': case '2': case '3': case '4': 
 			case '5': case '6': case '7': case '8': case '9':
-				decimal = decimal + (atoi(hex[length])*count);
+				int hex_number = (int)hex[length] - 48; 
+				//Sub 48 because 0 is the 48th ASCII character, so returns 48. Then 1 is the 49th, and so on
+				decimal = decimal + (hex_number*count);
 				count = count*16;
 				break;
 			case 'A':
